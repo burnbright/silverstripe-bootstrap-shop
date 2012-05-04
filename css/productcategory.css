@@ -1,0 +1,19 @@
+.productItem{
+	height:200px;
+	margin-bottom:15px;	
+}
+
+ .productItem .title{
+ 	line-height:1.2em;
+ 	display:block;
+ 	height:45px;
+ 	overflow:hidden;
+ }
+ 
+  .productItem .price{
+	margin-bottom:7px;
+ }
+ 
+ .filterbar{
+ 	margin-bottom:1em;
+ }
