@@ -9,7 +9,7 @@
 		</a>
 	<% end_if %>
 	<div class="caption">
-		<h5 class="title"><a href="$Link" title="<% sprintf(_t("READMORE"),$Title) %>">$Title</a></h5>
+		<h5 class="title"><a href="$Link" title="<% sprintf(_t("READMORE"),$Title) %>">$Title.LimitCharacters(45,..)</a></h5>
 		<div class="price"><% if Price %><strong class="price">$Price.Nice</strong> <span class="currency">$Currency</span><% end_if %></div>
 		<div class="actions">
 			<a class="btn btn-mini" href="$Link" title="<% sprintf(_t("VIEW","View &quot;%s&quot;"),$Title) %>">

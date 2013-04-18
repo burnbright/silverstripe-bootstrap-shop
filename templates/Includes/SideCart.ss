@@ -3,7 +3,7 @@
 	<div class="sidecart">
 		<% if Items %>
 			<h3><% _t("HEADLINE","My Cart") %></h3>
-			<p class="itemcount">There are <a href="$CartLink">$Items.Count items</a> in your cart.</p>
+			<p class="itemcount">There <% if Items.Plural %>are<% else %>is<% end_if %> <a href="$CartLink">$Items.Quantity item<% if Items.Plural %>s<% end_if %></a> in your cart.</p>
 			<table class="table table-condensed">
 			<% control Items %>
 				<tr class="item $EvenOdd $FirstLast">
@@ -32,7 +32,7 @@
 			</h5>
 			<hr/>
 			<div class="actions">
-				<a href="$CartLink" class="btn btn-primary btn-mini"><i class="icon-shopping-cart icon-white"></i> Cart</a>
+				<% if CartLink %><a href="$CartLink" class="btn btn-primary btn-mini"><i class="icon-shopping-cart icon-white"></i> Cart</a><% end_if %>
 				<a href="$CheckoutLink" class="btn btn-success btn-mini"><i class="icon-arrow-right icon-white"></i> Checkout</a>
 			</div>
 		<% end_if %>

@@ -1,0 +1,31 @@
+#Checkout a .editicon{
+	display:none;
+}
+	#Checkout a:hover .editicon{
+		display:inline-block;
+	}
+
+#Checkout h3 .icon{
+	margin-top:7px;
+}
+#Checkout h3 a:hover{
+	text-decoration:none;
+}
+
+#Form_AddressForm .text label.right{
+	font-size:10px;
+	color:#ccc;
+	margin-top:-8px;
+}
+
+#Form_AddressForm #AddressLine2 label.left{
+	display:none;
+}
+
+#Notes textarea{
+	-webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   	box-sizing: border-box;
+	width:100%;
+	resize: vertical;
+}

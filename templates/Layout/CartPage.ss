@@ -13,6 +13,10 @@
 	<% control ModifierForms %>
 		$Me
 	<% end_control %>
+	<h3>Get shipping estimate:</h3>
+	<% require themedCSS(shippingestimates) %>
+	$ShippingEstimateForm
+	<% include ShippingEstimates %>
 <% else %>
 	<div class="message warning alert alert-block alert-info">
 		<h4 class="alert-heading">Your cart is empty</h4>

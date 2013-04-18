@@ -1,4 +1,3 @@
-<% require themedCSS(order) %>
 <div id="OrderInformation">
 	<% include Order_Shipping %>
 	<% include Order_Content %>

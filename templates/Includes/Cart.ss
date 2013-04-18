@@ -1,5 +1,4 @@
 <% require themedCSS(cart) %>
-<h3 class="orderInfo"><% _t("ORDERINFORMATION","Order Information") %></h3>
 <table class="cart table table-bordered" summary="<% _t("TABLESUMMARY","Current contents of your cart.") %>">
 	<colgroup class="image"/>
 	<colgroup class="product title"/>
@@ -55,36 +54,6 @@
 			<th colspan="4" scope="row"><% _t("SUBTOTAL","Sub-total") %></th>
 			<td id="$TableSubTotalID">$SubTotal.Nice</td>
 			<td>&nbsp;</td>
-		</tr>
-		<% if Modifiers %>
-			<% control Modifiers %>
-				<% if ShowInTable %>
-					<tr id="$TableID" class="$Classes">
-						<th id="$TableTitleID" colspan="4" scope="row">
-							<% if Link %>
-								<a href="$Link" title="<% sprintf(_t("READMORE","Click here to read more on &quot;%s&quot;"),$TableTitle) %>">$TableTitle</a>
-							<% else %>
-								$TableTitle
-							<% end_if %>
-						</th>
-						<td id="$TableTotalID">$TableValue.Nice</td>
-						<td>
-							<% if CanRemove %>
-								<strong>
-									<a class="ajaxQuantityLink" href="$removeLink" title="<% sprintf(_t("REMOVE","Remove &quot;%s&quot; from your order"),$TableTitle) %>">
-										<i class="icon-trash"></i>
-									</a>
-								</strong>
-							<% end_if %>
-						</td>
-					</tr>
-				<% end_if %>
-			<% end_control %>
-		<% end_if %>
-		<tr class="gap Total">
-			<th colspan="4" scope="row"><% _t("TOTAL","Total") %></th>
-			<td id="$TableTotalID"><span class="value">$Total.Nice</span> <span class="currency">$Currency</span></td>
-			<td></td>
 		</tr>
 	</tfoot>
 </table>
