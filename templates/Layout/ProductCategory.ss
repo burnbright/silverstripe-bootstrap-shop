@@ -1,4 +1,7 @@
 <% require themedCSS(productcategory) %>
+<%-- unfortunately above doesn't work in SS3: --%>
+<link rel="stylesheet" type="text/css" href="/themes/bootstrap_shop/css/productcategory.css" />
+
 <div class="page-header">
 	<h1 class="pageTitle">$Title</h1>
 	$Breadcrumbs

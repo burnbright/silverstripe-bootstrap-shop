@@ -1,4 +1,8 @@
 <% require themedCSS(product) %>
+<%-- unfortunately above doesn't work in SS3: --%>
+<link rel="stylesheet" type="text/css" href="/themes/bootstrap_shop/css/product.css" />
+
+
 <div class="row">
 	<div id="Sidebar" class="span2">
 		<% with Parent %>
