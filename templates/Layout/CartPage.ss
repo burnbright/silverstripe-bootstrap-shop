@@ -7,16 +7,19 @@
 	<% end_if %>
 </div>
 <% if Cart %>
-	<% control Cart %>
+	<% with Cart %>
 		<% include Cart %>
-	<% end_control %>
-	<% control ModifierForms %>
+	<% end_with %>
+	<% loop ModifierForms %>
 		$Me
-	<% end_control %>
+	<% end_loop %>
+	<!--
 	<h3>Get shipping estimate:</h3>
 	<% require themedCSS(shippingestimates) %>
 	$ShippingEstimateForm
-	<% include ShippingEstimates %>
+	TODO
+	-->
+	<%-- include ShippingEstimates --%>
 <% else %>
 	<div class="message warning alert alert-block alert-info">
 		<h4 class="alert-heading">Your cart is empty</h4>
@@ -40,5 +43,5 @@
 		</div>	
 	<% end_if %>
 </div>
-<% include RelatedItems %>
-<% include RecentlyViewedItems %>
+<%-- include RelatedItems --%>
+<%-- include RecentlyViewedItems --%>

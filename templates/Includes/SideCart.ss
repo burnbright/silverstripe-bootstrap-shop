@@ -1,11 +1,11 @@
 <% if Cart %>
-	<% control Cart %>
+	<% with Cart %>
 	<div class="sidecart">
 		<% if Items %>
 			<h3><% _t("HEADLINE","My Cart") %></h3>
 			<p class="itemcount">There <% if Items.Plural %>are<% else %>is<% end_if %> <a href="$CartLink">$Items.Quantity item<% if Items.Plural %>s<% end_if %></a> in your cart.</p>
 			<table class="table table-condensed">
-			<% control Items %>
+			<% loop Items %>
 				<tr class="item $EvenOdd $FirstLast">
 					<td>
 						<h5>
@@ -24,7 +24,7 @@
 						<p class="quantityprice"><span class="quantity">$Quantity</span> <span class="times">x</span> <span class="unitprice">$UnitPrice.Nice</span></p>
 					</td>
 				</tr>
-			<% end_control %>
+			<% end_loop %>
 			</table>
 			<hr/>
 			<h5 class="subtotal">
@@ -37,7 +37,7 @@
 			</div>
 		<% end_if %>
 	</div>
-	<% end_control %>
+	<% end_with %>
 <% else %>
 	<div class="alert alert-info">
    		<h4 class="alert-heading">Empty Cart</h4>

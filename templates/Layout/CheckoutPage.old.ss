@@ -7,12 +7,12 @@
 		<% end_if %>
 	</div>
 	<% if Cart %>
-		<% control Cart %>
+		<% with Cart %>
 			<% include Cart %>
-		<% end_control %>
-		<% control ModifierForms %>
+		<% end_with %>
+		<% loop ModifierForms %>
 			$Me
-		<% end_control %>
+		<% end_loop %>
 		<% if Cart.Items %>$OrderForm<% end_if %>
 	<% else %>
 		<div class="message warning alert alert-block alert-info">
