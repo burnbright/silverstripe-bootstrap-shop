@@ -1,0 +1,10 @@
+{
+	"name": "burnbright/bootstrap-shop",
+	"description": "SilverStripe bootstrap theme extensions for shop module",
+	"type": "silverstripe-theme",
+	"require": {
+		"composer/installers": "*",
+		"silverstripe/cms": ">=3.0",
+		"silverstripe/framework": ">=3.0"
+	}
+}
