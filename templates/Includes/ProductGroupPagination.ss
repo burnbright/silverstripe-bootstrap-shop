@@ -6,13 +6,13 @@
 		<% else %>
 			<li class="disabled"><a href="#"><% _t('ProductGroup.PREVIOUS','previous') %></a></li>
 		<% end_if %>
-    	<% control Products.PaginationSummary(4) %>
+    	<% with Products.PaginationSummary(4) %>
 			<% if CurrentBool %>
 				<li class="active"><a href="$Link" title="view page $PageNum">$PageNum</a></li>
 			<% else %>
 				<li><a href="$Link" title="view page $PageNum">$PageNum</a></li>
 			<% end_if %>
-		<% end_control %>
+		<% end_with %>
 		<% if Products.NotLastPage %>
 			<li><a class="next" href="$Products.NextLink" title="View the next page"><% _t('ProductGroup.NEXT','next') %></a></li>
 		<% else %>

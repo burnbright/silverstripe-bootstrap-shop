@@ -17,13 +17,13 @@
 		</tr>
 	</thead>
 	<tbody>
-		<% control Items %><% if ShowInTable %>
+		<% loop Items %><% if ShowInTable %>
 			<tr id="$TableID" class="$Classes $EvenOdd $FirstLast">
 				<td>
 					<% if Product.Image %>
 						<div class="image">
 							<a href="$Link" title="<% sprintf(_t("READMORE","View &quot;%s&quot;"),$Title) %>">
-								<% control Product %>$Image.setWidth(45)<% end_control %>
+								<% with Product %>$Image.setWidth(45)<% end_with %>
 							</a>
 						</div>
 					<% end_if %>
