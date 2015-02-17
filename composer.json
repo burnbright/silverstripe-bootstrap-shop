@@ -1,0 +1,13 @@
+{
+	"name": "burnbright/silverstripe-bootstrap-shop",
+	"description": "Shop sub-theme for silverstripe bootstrap",
+	"type": "silverstripe-theme",
+	"require": {
+		"composer/installers": "*",
+		"silverstripe/framework": ">=3.1",
+		"burnbright/silverstripe-bootstrap": "*"
+	},
+	"extra": {
+		"installer-name": "bootstrap_shop"
+	}
+}
