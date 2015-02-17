@@ -18,9 +18,9 @@
 						<div class="btn-group">
 							<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">Sort<span class="caret"></span></a>
 						    <ul class="dropdown-menu">
-							    <% control SortLinks %>
+							    <% loop SortLinks %>
 									<li><a href="$Link" class="sortlink $Current">$Name</a></li> 
-								<% end_control %>
+								<% end_loop %>
 						    </ul>
 						</div>
 						<% end_if %>
@@ -28,11 +28,13 @@
 				</div>
 				
 				<ul class="productList thumbnails">
-					<% control Products %>
+					<% loop Products %>
 						<% include ProductGroupItem %>
-					<% end_control %>
+					<% end_loop %>
 				</ul>
-				<% include ProductGroupPagination %>
+				<% with Products %>
+					<% include Pagination %>
+				<% end_with %>
 			</div>
 		<% end_if %>
 	</div>

@@ -1,5 +1,4 @@
-<% require themedCSS(cart) %>
-<table class="cart table" summary="<% _t("TABLESUMMARY","Current contents of your cart.") %>">
+<table class="order_content_table table">
 	<colgroup class="image"/>
 	<colgroup class="product title"/>
 	<colgroup class="unitprice" />
@@ -16,13 +15,8 @@
 	</thead>
 	<tbody>
 		<% loop Items %>
-			<% include Order_ItemLine %>
+			<% include Order_Content_ItemLine %>
 		<% end_loop %>
 	</tbody>
-	<tfoot>
-		<tr class="subtotal">
-			<th colspan="4" scope="row"><% _t("SUBTOTAL","Sub-total") %></th>
-			<td id="$TableSubTotalID">$SubTotal.Nice</td>
-		</tr>
-	</tfoot>
+	<% include Order_Content_SubTotals %>
 </table>

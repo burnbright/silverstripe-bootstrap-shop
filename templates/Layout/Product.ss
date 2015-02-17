@@ -1,9 +1,9 @@
 <% require themedCSS(product) %>
 <div class="row">
 	<div id="Sidebar" class="span2">
-		<% control Parent %>
+		<% with Parent %>
 			<% include ProductMenu %>
-		<% end_control %>
+		<% end_with %>
 	</div>
 	<div id="Product" class="typography span8">
 		<div class="row">
@@ -35,7 +35,7 @@
 						<% end_if %>
 						<% if canPurchase %>
 							<% if IsInCart %>
-								<% control Item %>
+								<% loop Item %>
 									<div class="quantityBox">
 										<span><% _t("QUANTITYCART","Quantity in cart") %>:</span> $QuantityField
 										<div class="productActions">
@@ -49,7 +49,7 @@
 											</a>
 										</div>
 									</div>
-								<% end_control %>
+								<% end_loop %>
 							<% else %>
 								<a href="$addLink" class="btn btn-success btn-large" title="<% sprintf(_t("ADD","Add &quot;%s&quot; to your cart"),$Title) %>">
 									<i class="icon-plus-sign icon-white"></i>

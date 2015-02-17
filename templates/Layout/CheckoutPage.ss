@@ -4,7 +4,7 @@
 <% if Cart %>
 
 	<div class="row">
-		<div class="span10">
+		<div class="col-lg-12">
 	
 			<div id="Checkout" class="accordion">
 			
@@ -15,9 +15,9 @@
 					</div>
 					<div class="accordion-body">
 						<div class="accordion-inner">
-							<% control Cart %>
+							<% with Cart %>
 								<% include Cart_ReadOnly %>
-							<% end_control %>
+							<% end_with %>
 						</div>
 					</div>
 				</div>
@@ -37,12 +37,12 @@
 							<div class="accordion-inner">
 								<% if IsCurrentStep(contactdetails) %>
 									<p>Supply your contact information</p>
-									$Form
+									$OrderForm
 								<% end_if %>
 								<% if IsPastStep(contactdetails) %>
-									<% control Cart %>
+									<% with Cart %>
 										$Name ($Email)
-									<% end_control %>
+									<% end_with %>
 								<% end_if %>
 							</div>
 						</div>
@@ -64,24 +64,24 @@
 							<div class="accordion-inner">
 								<% if IsCurrentStep(shippingaddress) %>
 									<p>Please enter your shipping address details.</p>
-									$Form
+									$OrderForm
 								<% end_if %>
 								<% if IsPastStep(shippingaddress) %>
 									<div class="row">
-										<div class="span4">
-											<% control Cart %>
+										<div class="col-xs-6">
+											<% with Cart %>
 												<h4>Ship To:</h4>
 												$ShippingAddress
-											<% end_control %>
+											<% end_with %>
 										</div>
-										<div class="span4">
+										<div class="col-xs-6">
 										<h4>Bill To:</h4>
 											<% if IsCurrentStep(billingaddress) %>
-												$Form
+												$OrderForm
 											<% else %>
-												<% control Cart %>
+												<% with Cart %>
 													$BillingAddress
-												<% end_control %>
+												<% end_with %>
 											<% end_if %>
 										</div>
 									</div>
@@ -105,12 +105,12 @@
 						<div class="accordion-body">
 							<div class="accordion-inner">
 								<% if IsCurrentStep(shippingmethod) %>
-									$Form
+									$OrderForm
 								<% end_if %>
 								<% if IsPastStep(shippingmethod) %>
-									<% control Cart %>
+									<% with Cart %>
 										<p>$ShippingMethod.Title</p>
-									<% end_control %>
+									<% end_with %>
 								<% end_if %>
 							</div>
 						</div>
@@ -131,7 +131,7 @@
 						<div class="accordion-body">
 							<div class="accordion-inner">
 								<% if IsCurrentStep(paymentmethod) %>
-									$Form
+									$OrderForm
 								<% end_if %>
 								<% if IsPastStep(paymentmethod) %>
 									$SelectedPaymentMethod
@@ -151,25 +151,25 @@
 						<div class="accordion-body">
 							<div class="accordion-inner">
 								<% if IsCurrentStep(summary) %>
-									<% control Cart %>
+									<% with Cart %>
 										<table class="table">
 											<tfoot>
-												<% control Modifiers %>
+												<% loop Modifiers %>
 													<% if ShowInTable %>
-												<tr class="modifierRow $EvenOdd $FirstLast $Classes">
-													<td colspan="3">$TableTitle</td>
-													<td>$TableValue.Nice</td>
-												</tr>
+														<tr class="modifierRow $EvenOdd $FirstLast $Classes">
+															<td colspan="3">$TableTitle</td>
+															<td>$TableValue.Nice</td>
+														</tr>
 													<% end_if %>
-												<% end_control %>
+												<% end_loop %>
 												<tr>
 													<th colspan="3">Grand Total</th>
 													<td>$Total.Nice $Currency</td>
 												</tr>
 											</tfoot>
 										</table>
-									<% end_control %>
-									$Form
+									<% end_with %>
+									$OrderForm
 								<% end_if %>
 							</div>
 						</div>
@@ -187,12 +187,11 @@
 		<h4 class="alert-heading">Your cart is empty</h4>
 		<i class="icon icon-info-sign"></i> <% _t("NOITEMS","There are no items in your cart.") %>
 	</div>
-	
 	<% if ContinueLink %>
-	<a class="continuelink btn btn-primary" href="$ContinueLink">
-		<i class="icon-arrow-left icon-white"></i>
-		<% _t('CartPage.ss.CONTINUE','Continue Shopping') %>
-	</a>
+		<a class="continuelink btn btn-primary" href="$ContinueLink">
+			<i class="icon-arrow-left icon-white"></i>
+			<% _t('CartPage.ss.CONTINUE','Continue Shopping') %>
+		</a>
 	<% end_if %>
 	
 <% end_if %>

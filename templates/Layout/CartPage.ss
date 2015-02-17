@@ -7,16 +7,11 @@
 	<% end_if %>
 </div>
 <% if Cart %>
-	<% control Cart %>
-		<% include Cart %>
-	<% end_control %>
-	<% control ModifierForms %>
-		$Me
-	<% end_control %>
-	<h3>Get shipping estimate:</h3>
-	<% require themedCSS(shippingestimates) %>
-	$ShippingEstimateForm
-	<% include ShippingEstimates %>
+	<% if CartForm %>
+		$CartForm
+	<% else %>
+		<% with Cart %><% include Cart Editable=true %><% end_with %>
+	<% end_if %>
 <% else %>
 	<div class="message warning alert alert-block alert-info">
 		<h4 class="alert-heading">Your cart is empty</h4>
@@ -33,12 +28,10 @@
 	
 	<% if Cart %>
 		<div class="pull-right">
-			<a href="$Cart.CheckoutLink" class="checkoutlink btn btn-success">
+			<a href="$CheckoutLink" class="checkoutlink btn btn-success">
 				<i class="icon-arrow-right icon-white"></i>
 				<% _t('CartPage.ss.PROCEEDTOCHECKOUT','Proceed to Checkout') %>
 			</a>
 		</div>	
 	<% end_if %>
 </div>
-<% include RelatedItems %>
-<% include RecentlyViewedItems %>
