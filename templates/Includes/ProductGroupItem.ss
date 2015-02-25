@@ -1,4 +1,4 @@
-<div class="productItem span2 thumbnail">
+<div class="products_item thumbnail">
 	<% if Image %>
 		<a href="$Link" title="<% sprintf(_t("READMORE","Click here to read more on &quot;%s&quot;"),$Title) %>">
 			<img src="$Image.Thumbnail.URL" alt="<% sprintf(_t("IMAGE","%s image"),$Title) %>" />
@@ -12,7 +12,7 @@
 		<h5 class="title"><a href="$Link" title="<% sprintf(_t("READMORE"),$Title) %>">$Title.LimitCharacters(45,..)</a></h5>
 		<div class="price"><% if Price %><strong class="price">$Price.Nice</strong> <span class="currency">$Currency</span><% end_if %></div>
 		<div class="actions">
-			<a class="btn btn-mini" href="$Link" title="<% sprintf(_t("VIEW","View &quot;%s&quot;"),$Title) %>">
+			<a class="btn btn-mini btn-default" href="$Link" title="<% sprintf(_t("VIEW","View &quot;%s&quot;"),$Title) %>">
 				<i class="icon-eye-open"></i>
 				<% _t("VIEW","View") %>
 			</a>
