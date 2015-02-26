@@ -34,8 +34,8 @@
 				</h5>
 				<hr/>
 				<div class="actions">
-					<% if CartLink %><a href="$CartLink" class="btn btn-primary btn-mini"><i class="icon-shopping-cart icon-white"></i> Cart</a><% end_if %>
-					<a href="$CheckoutLink" class="btn btn-success btn-mini"><i class="icon-arrow-right icon-white"></i> Checkout</a>
+					<% if Top.CartLink %><a href="$Top.CartLink" class="btn btn-primary btn-mini"><i class="icon-shopping-cart icon-white"></i> Cart</a><% end_if %>
+					<a href="$Top.CheckoutLink" class="btn btn-success btn-mini"><i class="icon-arrow-right icon-white"></i> Checkout</a>
 				</div>
 			<% end_if %>
 		</div>

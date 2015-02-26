@@ -13,7 +13,9 @@
 			<th scope="col"><% _t("UNITPRICE","Unit Price") %></th>
 			<th scope="col"><% _t("QUANTITY", "Quantity") %></th>
 			<th scope="col"><% _t("TOTALPRICE","Total Price") %> ($Currency)</th>
-			<th scope="col"></th>
+			<% if Editable %>
+				<th scope="col"></th>
+			<% end_if %>
 		</tr>
 	</thead>
 	<tbody>
@@ -40,13 +42,19 @@
 					<% if SubTitle %><p class="subtitle">$SubTitle</p><% end_if %>
 				</td>
 				<td>$UnitPrice.Nice</td>
-				<td>$QuantityField</td>
+				<td><% if Editable %>$QuantityField<% else %>$Quantity<% end_if %></td>
 				<td id="$TableTotalID">$Total.Nice</td>
-				<td>
-					<a href="$removeallLink" title="<% sprintf(_t("REMOVEALL","Remove all of &quot;%s&quot; from your cart"),$TableTitle) %>">
-						<i class="icon-trash"></i>
-					</a>
-				</td>
+				<% if Editable %>
+					<td>
+						<% if RemoveField %>
+							$RemoveField
+						<% else %>
+							<a href="$removeallLink" title="<% sprintf(_t("REMOVEALL","Remove all of &quot;%s&quot; from your cart"),$TableTitle) %>">
+								<i class="icon-trash"></i>
+							</a>
+						<% end_if %>
+					</td>
+				<% end_if %>
 			</tr>
 			<% end_if %>
 		<% end_loop %>
@@ -55,7 +63,9 @@
 		<tr class="subtotal">
 			<th colspan="4" scope="row"><% _t("SUBTOTAL","Sub-total") %></th>
 			<td id="$TableSubTotalID">$SubTotal.Nice</td>
-			<td>&nbsp;</td>
+			<% if Editable %>
+				<td>&nbsp;</td>
+			<% end_if %>
 		</tr>
 	</tfoot>
 </table>

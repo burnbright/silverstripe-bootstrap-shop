@@ -1,5 +1,5 @@
 <div class="container">
-	<% require themedCSS(productcategory) %>
+	<% require themedCSS(productcategory,shop) %>
 	<div class="page-header">
 		<h1 class="pageTitle">$Title</h1>
 		$Breadcrumbs

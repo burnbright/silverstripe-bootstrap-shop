@@ -1,19 +1,16 @@
-.productItem{
-	height:200px;
-	margin-bottom:15px;	
+.productgroupitem{
+	min-height: 250px;
+	margin-bottom: 15px;	
 }
 
- .productItem .title{
+ .productgroupitem .title{
  	line-height:1.2em;
  	display:block;
  	height:45px;
  	overflow:hidden;
  }
  
-  .productItem .price{
+ .productgroupitem .price{
 	margin-bottom:7px;
  }
  
- .filterbar{
- 	margin-bottom:1em;
- }

@@ -1,5 +1,5 @@
 <div class="container">
-	<% require themedCSS(product) %>
+	<% require themedCSS(product,shop) %>
 	<div class="row">
 		<div id="Sidebar" class="col-sm-2">
 			<% with Parent %>

@@ -1,4 +1,4 @@
-<div class="products_item thumbnail">
+<div class="productgroupitem thumbnail">
 	<% if Image %>
 		<a href="$Link" title="<% sprintf(_t("READMORE","Click here to read more on &quot;%s&quot;"),$Title) %>">
 			<img src="$Image.Thumbnail.URL" alt="<% sprintf(_t("IMAGE","%s image"),$Title) %>" />
