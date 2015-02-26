@@ -14,16 +14,9 @@
 				<div id="Products" class="category">
 					
 					<div class="filterbar row">
-						<div class="col-sm-12">
-							<% if SortLinks %>
-							<div class="btn-group">
-								<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">Sort<span class="caret"></span></a>
-							    <ul class="dropdown-menu">
-								    <% loop SortLinks %>
-										<li><a href="$Link" class="sortlink $Current">$Name</a></li> 
-									<% end_loop %>
-							    </ul>
-							</div>
+						<div class="col-sm-4">
+							<% if Sorter %>
+								<% include Sorter %>
 							<% end_if %>
 						</div>
 					</div>
