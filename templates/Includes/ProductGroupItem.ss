@@ -12,12 +12,12 @@
 		<h5 class="title"><a href="$Link" title="<% sprintf(_t("READMORE"),$Title) %>">$Title.LimitCharacters(45,..)</a></h5>
 		<div class="price"><% if Price %><strong class="price">$Price.Nice</strong> <span class="currency">$Currency</span><% end_if %></div>
 		<div class="actions">
-			<a class="btn btn-mini btn-default" href="$Link" title="<% sprintf(_t("VIEW","View &quot;%s&quot;"),$Title) %>">
+			<a class="btn btn-mini btn-primary" href="$Link" title="<% sprintf(_t("VIEW","View &quot;%s&quot;"),$Title) %>">
 				<i class="icon-eye-open"></i>
 				<% _t("VIEW","View") %>
 			</a>
 			<% if canPurchase %>
-				<a class="btn btn-primary btn-mini" href="$addLink" title="<% sprintf(_t("ADD","Add &quot;%s&quot; to your cart"),$Title) %>">
+				<a class="btn btn-default btn-mini" href="$addLink" title="<% sprintf(_t("ADD","Add &quot;%s&quot; to your cart"),$Title) %>">
 					<i class="icon-shopping-cart icon-white"></i>
 					<% _t("ADDLINK","Add") %>
 				</a>
