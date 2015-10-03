@@ -1,10 +1,10 @@
 <% if Cart %>
 	<% with Cart %>
-		<div class="sidecart">
+		<div class="sidecart well">
 			<% if Items %>
 				<h3><% _t("HEADLINE","My Cart") %></h3>
 				<p class="itemcount">
-					There <% if Items.Plural %>are<% else %>is<% end_if %> <a href="$CartLink">$Items.Quantity item<% if Items.Plural %>s<% end_if %></a> in your cart.
+					There <% if Items.Plural %>are<% else %>is<% end_if %> <a href="$Top.CartLink">$Items.Quantity item<% if Items.Plural %>s<% end_if %></a> in your cart.
 				</p>
 				<table class="table table-condensed">
 				<% loop Items %>
