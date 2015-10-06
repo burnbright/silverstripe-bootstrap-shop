@@ -20,6 +20,7 @@
 					<% end_with %>
 				</div>
 				
+				<% if StepExists(contactdetails) %>
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						<% if IsPastStep(contactdetails) %>
@@ -44,7 +45,9 @@
 						</div>
 					<% end_if %>
 				</div>
+				<% end_if %>
 				
+				<% if StepExists(shippingaddress) %>
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						<% if IsPastStep(shippingaddress) %>
@@ -84,7 +87,9 @@
 						</div>
 					<% end_if %>
 				</div>
+				<% end_if %>
 				
+				<% if StepExists(shippingmethod) %>
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						<% if IsPastStep(shippingmethod) %>
@@ -108,7 +113,9 @@
 						</div>
 					<% end_if %>
 				</div>
-			
+				<% end_if %>
+				
+				<% if StepExists(paymentmethod) %>
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						<% if IsPastStep(paymentmethod) %>
@@ -130,6 +137,7 @@
 						</div>				
 					<% end_if %>
 				</div>
+				<% end_if %>
 				
 				<div class="panel panel-default">
 					<div class="panel-heading">
