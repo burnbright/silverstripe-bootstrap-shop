@@ -19,7 +19,7 @@
 			<i class="icon icon-info-sign"></i> <% _t("NOITEMS","There are no items in your cart.") %>
 		</div>
 	<% end_if %>
-	<div class="cartfooter">
+	<div class="cartfooter actionsrow">
 		<% if ContinueLink %>
 			<a class="continuelink btn btn-primary" href="$ContinueLink">
 				<i class="icon-arrow-left icon-white"></i>
